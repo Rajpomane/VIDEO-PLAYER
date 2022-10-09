@@ -380,7 +380,7 @@ async def restart(client, m: Message):
 
 
 
-bot.run()
+
 call_py.start()
 pyidle()
-idle()
+
