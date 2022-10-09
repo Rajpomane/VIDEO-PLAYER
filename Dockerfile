@@ -16,5 +16,5 @@ RUN pip3 install -U -r requirements.txt
 RUN mkdir /VideoBot
 WORKDIR /VideoBot
 
-COPY start.sh /start.sh
-CMD ["/bin/bash", "/start.sh"]
+
+CMD ["python vidstream.py"]
