@@ -10,11 +10,10 @@ RUN apt-get install -y nodejs
 RUN npm i -g npm
 
 COPY requirements.txt /requirements.txt
-RUN cd /
 RUN pip3 install -U -r requirements.txt
 
-RUN mkdir /VideoBot
-WORKDIR /VideoBot
+COPY . .
+
+CMD [ "python3", "vidstream.py"]
 
 
-CMD ["python vidstream.py"]
