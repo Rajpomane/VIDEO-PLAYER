@@ -338,45 +338,7 @@ async def stop(client, m: Message):
    except Exception as e:
       print(e)
 
-@bot.on_message(self_or_contact_filter & filters.command("ping", prefixes=f"{HNDLR}"))
-async def ping(client, m: Message):
-   start = time()
-   current_time = datetime.utcnow()
-   m_reply = await m.reply_text("`...`")
-   delta_ping = time() - start
-   uptime_sec = (current_time - START_TIME).total_seconds()
-   uptime = await _human_time_duration(int(uptime_sec))
-   await m_reply.edit(f"`Pong 🏓!` `{delta_ping * 1000:.3f} ms` \n**Uptime 🔰** - `{uptime}`")
 
-@bot.on_message(self_or_contact_filter & filters.command("killall", prefixes=f"{HNDLR}"))
-async def kill(client, m: Message):   
-   os.system("pkill ffmpeg")
-   try:
-      os.system("rm -rf downloads")
-   except Exception as e:
-      print(e)
-   for x in GROUP_CALL:
-      await call_py.leave_group_call(x)
-      GROUP_CALL.remove(x)
-   await m.reply("`Cleaned all the Temporary Files 🗑️ and Stopped All Processes and Left all Voice Chats`")
-
-@bot.on_message(self_or_contact_filter & filters.command("help", prefixes=f"{HNDLR}"))
-async def help(client, m: Message):
-   await m.reply(f"**`🔰DEVELOPER🔰 ↗ ©LEGEND-ANKIT™`** \n\n**🛠 HELP MENU** \n\n`{HNDLR}ping` \n`{HNDLR}vplay query` \n`{HNDLR}vstream link` \n`{HNDLR}vstop` \n`{HNDLR}pause` \n`{HNDLR}resume` \n`{HNDLR}update` \n`{HNDLR}restart`")
-
-@bot.on_message(self_or_contact_filter & filters.command("update", prefixes=f"{HNDLR}"))
-async def update(client, m: Message):
-   hmm = await bash("git pull -f")
-   await m.reply(f"`{hmm}`")
-   os.execl(sys.executable, "python3", "-m", "vidstream.py")
-
-@bot.on_message(self_or_contact_filter & filters.command("restart", prefixes=f"{HNDLR}"))
-async def restart(client, m: Message):
-   umm = await m.reply_text("`Restarting ⚙️...`")
-   try:
-      asyncio.get_event_loop().create_task(os.kill(os.getpid(), signal.SIGUSR1))
-   except Exception as e:
-      await umm.edit(f"**An Error Occurred :-** \n`{e}`")
 
 
 
