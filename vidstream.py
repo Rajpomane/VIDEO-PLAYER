@@ -18,15 +18,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import dotenv
 
-# System Uptime
-START_TIME = datetime.utcnow()
-TIME_DURATION_UNITS = (
-    ('Week', 60 * 60 * 24 * 7),
-    ('Day', 60 * 60 * 24),
-    ('Hour', 60 * 60),
-    ('Min', 60),
-    ('Sec', 1)
-)
+
 async def _human_time_duration(seconds):
     if seconds == 0:
         return 'inf'
@@ -58,13 +50,6 @@ async def get_youtube_stream(ytlink):
         stdout, stderr = await proc.communicate()
         return stdout.decode().split('\n')[0]
 
-# TimePass
-async def bash(cmd):
-    process = await asyncio.create_subprocess_shell(
-        cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-    )
-    stdout , stderr= await process.communicate()
-    return stdout.decode()
 
 
 # Client and PyTgCalls
@@ -75,10 +60,6 @@ CHAT = int(os.getenv("CHAT", "6"))
 HNDLR = os.getenv("HNDLR", "!")
 
 bot = Client(SESSION, API_ID, API_HASH)
-self_or_contact_filter = filters.create(
-    lambda _, __, message:
-    (message.from_user and message.from_user.is_contact) or message.outgoing
-)
 call_py = PyTgCalls(bot)
 GROUP_CALL = []
 
