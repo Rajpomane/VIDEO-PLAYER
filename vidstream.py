@@ -64,7 +64,7 @@ call_py = PyTgCalls(bot)
 GROUP_CALL = []
 
 
-@bot.on_message(self_or_contact_filter & filters.command("vstream", prefixes=f"{HNDLR}"))
+@bot.on_message(filters.me & filters.command("vstream", prefixes=f"{HNDLR}"))
 async def stream(client, m: Message):
    if len(m.command) < 2:
       await m.reply("`Give A Link/LiveLink/.m3u8 URL/YTLink to Stream from 🎶`")
@@ -138,7 +138,7 @@ async def stream(client, m: Message):
          except Exception as ep:
             await m.reply(f"{ep}")
 
-@bot.on_message(self_or_contact_filter & filters.command("vplay", prefixes=f"{HNDLR}"))
+@bot.on_message(filters.me & filters.command("vplay", prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
    replied = m.reply_to_message
    chat_id = m.chat.id
@@ -294,19 +294,19 @@ async def play(client, m: Message):
                except Exception as ep:
                   await m.reply(f"{ep}")
 
-@bot.on_message(self_or_contact_filter & filters.command("pause", prefixes=f"{HNDLR}"))
+@bot.on_message(filters.me & filters.command("pause", prefixes=f"{HNDLR}"))
 async def pause(client, m: Message):
    chat_id = m.chat.id
    await call_py.pause_stream(chat_id)
    await m.reply("`Paused Streaming ⏸️`")
 
-@bot.on_message(self_or_contact_filter & filters.command("resume", prefixes=f"{HNDLR}"))
+@bot.on_message(filters.me & filters.command("resume", prefixes=f"{HNDLR}"))
 async def resume(client, m: Message):
    chat_id = m.chat.id
    await call_py.resume_stream(chat_id)
    await m.reply("`Resumed Streaming ▶`") 
 
-@bot.on_message(self_or_contact_filter & filters.command("vstop", prefixes=f"{HNDLR}"))
+@bot.on_message(filters.me & filters.command("vstop", prefixes=f"{HNDLR}"))
 async def stop(client, m: Message):
    try:
       chat_id = m.chat.id
