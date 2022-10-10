@@ -321,9 +321,8 @@ async def stop(client, m: Message):
 
 
 
-
-
-
-call_py.start()
+bot.start()
+idle()
+call_py()
 pyidle()
 
