@@ -1,12 +1,12 @@
 {
-    "name": "TELEGRAM VC STREAMER",
-    "description": "A SIMPLE TELEGRAM BOT TO STREAM VIDEO'S ON VOICECHAT,MADE WITH LOVE BY ©LEGEND-ANKIT™",
+    "name": "Meow updater",
+    "description": "A SIMPLE TELEGRAM BOT TO STREAM VIDEO'S ON VOICECHAT,MADE WITH LOVE ™",
     "logo": "https://telegra.ph/file/b002d63974bd05ea7a336.jpg",
     "keywords": [
         "VIDEOPLAY",
         "Telegram Bot"
     ],
-    "repository": "https://github.com/LEGEND-ANKIT/VIDEO-PLAYER",
+    "repository": "https://github.com/kaal0408/Meow",
     "env": {
         "SESSION": {
             "description": "Pyrogram String Session",
@@ -22,9 +22,9 @@
             "value": "4d5ff4db45a7e931930d0c923a7fb295",
             "required": false
         },
-        "HNDLR": {
-            "description": "Handler | Default (!)",
-            "value": "!",
+        "MONGO_DB": {
+            "description": "Your mongo database here",
+            "value": "",
             "required": false
         }
     },
