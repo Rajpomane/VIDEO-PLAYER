@@ -31,15 +31,10 @@ from pyrogram import Client
 mongo = MongoClient(config.MONGO_DB_URI)
 db = mongo.AFK
 
-appid = 0
-appame = ""
-appusername = ""
 
 cleanmode = {}
 
 
-
-appname = getme.first_name
 
 
 
