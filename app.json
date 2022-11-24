@@ -22,7 +22,7 @@
             "value": "4d5ff4db45a7e931930d0c923a7fb295",
             "required": false
         },
-        "MONGO_DB": {
+        "MONGO_DB_URI": {
             "description": "Your mongo database here",
             "value": "",
             "required": false
