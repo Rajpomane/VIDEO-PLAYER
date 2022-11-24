@@ -5,3 +5,6 @@ asyncio
 youtube-search-python
 youtube-dl
 python-dotenv
+dnspython
+motor
+
