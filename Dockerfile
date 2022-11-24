@@ -14,6 +14,6 @@ RUN pip3 install -U -r requirements.txt
 
 COPY . .
 
-CMD [ "python3", "vidstream.py"]
+CMD [ "python3", "main.py"]
 
 
