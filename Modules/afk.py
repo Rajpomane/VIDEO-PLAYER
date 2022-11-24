@@ -1,24 +1,15 @@
-#
-# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiAFKBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiAFKBot/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 
 import time
 
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Yukki import app, botusername
-from Yukki.database import add_afk, is_afk, remove_afk
-from Yukki.helpers import get_readable_time, put_cleanmode
+from main import app
+from database import add_afk, is_afk, remove_afk
+from helpers import get_readable_time, put_cleanmode
 
 
-@app.on_message(filters.command(["afk", f"afk@{botusername}"]) & ~filters.edited)
+@app.on_message(filters.command(["afk", "."]) & ~filters.edited)
 async def active_afk(_, message: Message):
     if message.sender_chat:
         return
