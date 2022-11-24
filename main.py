@@ -38,13 +38,8 @@ appusername = ""
 cleanmode = {}
 
 
-getme = await app.get_me()
-appid = getme.id
-appusername = (getme.username).lower()
-if getme.last_name:
-  appname = getme.first_name + " " + getme.last_name
-else:
-  appname = getme.first_name
+
+appname = getme.first_name
 
 
 
