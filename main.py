@@ -5,7 +5,7 @@ import re
 import asyncio
 from pyrogram import Client, filters, idle
 from pyrogram.types import Message
-
+from config import config
 from dotenv import load_dotenv
 from datetime import datetime
 import dotenv
@@ -25,10 +25,8 @@ import time
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 from pyrogram import Client
 
-import config
 
-loop = asyncio.get_event_loop()
-boot = time.time()
+
 
 mongo = MongoClient(config.MONGO_DB_URI)
 db = mongo.AFK
