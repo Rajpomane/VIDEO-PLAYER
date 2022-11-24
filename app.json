@@ -10,21 +10,22 @@
     "env": {
         "SESSION": {
             "description": "Pyrogram String Session",
+            "value": "BQBa0oC1AHdWQD_4jX3bL2LMYeilfxIZuSSRQ-qoQ-j_mltRxdUk3sfSGkhWKONLuVCRV1E84aQ7413NWu5FqoQ2FTTWFmyArjGJx-Pfk5zmpI-KyYOtEEoKnb7JSBPQSlIEUGV8Cu_dnv9Ts0gJywl4nHDfu0gNtnCtakD9PI-wdVmjsd9jphkCAAQjp00SU07ar3VgAs-MLqgmJQOpybN53FrmFTy4r8qormOcwroavc7E0sVI7pPSrtjTBa2YIyZ3z83Nf3Q3JEVS9A93mIQw9q-5oC1vUTbLoLVJToZ1XcdwLl9iHF-uHBVskVhUGEDKcgdoKPme8nx4kQXnGM3KAAAAAUfStn8A",
             "required": true
         },
         "API_ID": {
             "description": "my.telegram.org",
-            "value": "14627413",
+            "value": "12729671",
             "required": false
         },
         "API_HASH": {
             "description": "my.telegram.org",
-            "value": "4d5ff4db45a7e931930d0c923a7fb295",
+            "value": "0476e6b1b88733e3f6d7640ff8d105a4",
             "required": false
         },
         "MONGO_DB_URI": {
             "description": "Your mongo database here",
-            "value": "",
+            "value": "mongodb+srv://kaal:kaaldb@cluster0.4om6diq.mongodb.net/?retryWrites=true&w=majority",
             "required": false
         }
     },
