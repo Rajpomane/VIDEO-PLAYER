@@ -6,7 +6,7 @@ from pyrogram.types import Message
 
 from main import app
 from database import add_afk, is_afk, remove_afk
-from helpers import get_readable_time, put_cleanmode
+from database.helpers import get_readable_time, put_cleanmode
 
 
 @app.on_message(filters.command(["afk", "."]) & ~filters.edited)
