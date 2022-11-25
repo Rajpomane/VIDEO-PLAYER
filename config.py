@@ -18,7 +18,7 @@ from pyrogram import Client, filters
 
 # Necessary Vars
 async def _human_time_duration(seconds):
-MONGO_DB_URI = os.getenv("MONGO_DB_URI", "")
+MONGO_DB_URI = os.getenv("MONGO_DB_URI")
 API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 SESSION = os.getenv("SESSION")
