@@ -7,4 +7,5 @@ youtube-dl
 python-dotenv
 dnspython
 motor
+pymongo
 
